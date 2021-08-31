@@ -13,7 +13,9 @@ int main(int argc, char *argv[])
     boost::shared_ptr<int> isp(new int(4));
 
     // trivial use of boost filesystem
-    boost::filesystem::path path = "/usr/share/cmake/modules";
+//    boost::filesystem::path path = "/usr/share/cmake/modules";
+    boost::filesystem::path path = "c:/";
+
     if (path.is_relative())
     {
         std::cout << "Path is relative" << std::endl;
