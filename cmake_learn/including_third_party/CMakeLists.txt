@@ -12,7 +12,7 @@ IF (WIN32)
 ELSEIF (UNIX)
 	MESSAGE(STATUS "Now is UNIX-like OS's.")
     # find a boost instll with the libraries filesystem and system 使用库文件系统和系统查找boost install
-    find_package(Boost 1.46.1 REQUIRED COMPONECTS filesystem system)
+    find_package(Boost 1.46.1 REQUIRED COMPONENTS filesystem system)
 ENDIF ()
 
 # 这是第三方库，而不是自己生成的静态动态库

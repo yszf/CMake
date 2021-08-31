@@ -12,9 +12,11 @@ int main(int argc, char *argv[])
     // use a shared ptr
     boost::shared_ptr<int> isp(new int(4));
 
-    // trivial use of boost filesystem
-//    boost::filesystem::path path = "/usr/share/cmake/modules";
+#if defined WIN32
     boost::filesystem::path path = "c:/";
+#else
+    boost::filesystem::path path = "./";
+#endif
 
     if (path.is_relative())
     {
