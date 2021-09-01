@@ -31,7 +31,14 @@ target_include_directories(third_party_include PRIVATE ${Boost_INCLUDE_DIRS})
 
 if(UNIX)
     # link the boost libraries
-    target_link_libraries(third_party_include PRIVATE Boost::filesystem)
+    # target_link_libraries(third_party_include PRIVATE Boost::filesystem)
+    message(${Boost_SYSTEM_LIBRARY})
+    message(${Boost_FILESYSTEM_LIBRARY})
+    target_link_libraries( third_party_include
+        PRIVATE
+        ${Boost_SYSTEM_LIBRARY} #/usr/lib64/libboost_system-mt.so
+        ${Boost_FILESYSTEM_LIBRARY} #/usr/lib64/libboost_filesystem-mt.so
+    )
 ELSEIF(WIN32)
     target_link_directories(third_party_include PRIVATE ${Boost_LIBRARY_DIRS})
 ENDIF()
